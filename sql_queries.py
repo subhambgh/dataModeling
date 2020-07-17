@@ -10,48 +10,48 @@ time_table_drop = "DROP TABLE IF EXISTS time; "
 
 songplay_table_create = ("""CREATE TABLE IF NOT EXISTS songplays(
 	songplay_id SERIAL CONSTRAINT songplay_pk PRIMARY KEY,
-	start_time TIMESTAMP NOT NULL ,
-	user_id INT NOT NULL,
-	level VARCHAR NOT NULL,
-	song_id VARCHAR,
-	artist_id VARCHAR,
-	session_id INT NOT NULL, 
-	location VARCHAR,
-	user_agent TEXT
+	start_time 	TIMESTAMP 	NOT NULL ,
+	user_id 	INT 		NOT NULL,
+	level 		VARCHAR,
+	song_id 	VARCHAR		NOT NULL,
+	artist_id 	VARCHAR		NOT NULL,
+	session_id 	INT, 
+	location 	VARCHAR,
+	user_agent 	TEXT
 )""")
 
 user_table_create = ("""CREATE TABLE IF NOT EXISTS  users(
-	user_id  INT CONSTRAINT users_pk PRIMARY KEY,
-	first_name  VARCHAR,
-	last_name  VARCHAR,
-	gender  CHAR(1),
-	level VARCHAR NOT NULL
+	user_id  	INT CONSTRAINT users_pk PRIMARY KEY,
+	first_name  	VARCHAR		NOT NULL,
+	last_name  	VARCHAR		NOT NULL,
+	gender  	CHAR(1)		NOT NULL,
+	level 		VARCHAR 	NOT NULL
 )""")
 
 song_table_create = ("""CREATE TABLE  IF NOT EXISTS songs(
-	song_id VARCHAR CONSTRAINT songs_pk PRIMARY KEY,
-	title  VARCHAR,
-	artist_id  VARCHAR ,
-	year INT CHECK (year >= 0),
-	duration FLOAT
+	song_id 	VARCHAR CONSTRAINT songs_pk PRIMARY KEY,
+	title  		VARCHAR		NOT NULL,
+	artist_id  	VARCHAR 	NOT NULL,
+	year 		INT 	CHECK (year >= 0),
+	duration 	FLOAT
 )""")
 
 artist_table_create = ("""CREATE TABLE  IF NOT EXISTS artists(
-	artist_id VARCHAR CONSTRAINT artist_pk PRIMARY KEY,
-	name VARCHAR,
-	location VARCHAR,
-	latitude DECIMAL(9,6),
-	longitude DECIMAL(9,6)
+	artist_id 	VARCHAR CONSTRAINT artist_pk PRIMARY KEY,
+	name 		VARCHAR		NOT NULL,
+	location 	VARCHAR,
+	latitude 	DECIMAL(9,6),
+	longitude 	DECIMAL(9,6)
 )""")
 
 time_table_create = ("""CREATE TABLE IF NOT EXISTS  time(
-	start_time  TIMESTAMP CONSTRAINT time_pk PRIMARY KEY,
-	hour INT NOT NULL CHECK (hour >= 0),
-	day INT NOT NULL CHECK (day >= 0),
-	week INT NOT NULL CHECK (week >= 0),
-	month INT NOT NULL CHECK (month >= 0),
-	year INT NOT NULL CHECK (year >= 0),
-	weekday VARCHAR NOT NULL
+	start_time  	TIMESTAMP CONSTRAINT time_pk PRIMARY KEY,
+	hour 		INT 		NOT NULL CHECK (hour >= 0),
+	day 		INT 		NOT NULL CHECK (day >= 0),
+	week 		INT 		NOT NULL CHECK (week >= 0),
+	month 		INT 		NOT NULL CHECK (month >= 0),
+	year 		INT 		NOT NULL CHECK (year >= 0),
+	weekday 	VARCHAR 	NOT NULL
 )""")
 
 # INSERT RECORDS
