@@ -13,8 +13,8 @@ songplay_table_create = ("""CREATE TABLE IF NOT EXISTS songplays(
 	start_time TIMESTAMP REFERENCES time (start_time),
 	user_id INT REFERENCES users (user_id),
 	level VARCHAR NOT NULL,
-	song_id VARCHAR REFERENCES songs (song_id),
-	artist_id VARCHAR REFERENCES artists (artist_id),
+	song_id VARCHAR,
+	artist_id VARCHAR,
 	session_id INT NOT NULL, 
 	location VARCHAR,
 	user_agent TEXT
